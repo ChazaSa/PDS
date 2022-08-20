@@ -27,7 +27,7 @@ def mi_funcion(Vm=0, A=1,frec=10, fase=np.pi/2, N=200, frecADC=250):
 
 
     
-mi_funcion(50,5,np.pi,600,100)
+mi_funcion(50,5,10,np.pi,100,500)
 
 
 
