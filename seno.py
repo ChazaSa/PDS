@@ -12,22 +12,15 @@ import numpy as np
 import matplotlib.pyplot as plt 
 
 
-def mi_funcion(Vm=0, A=1,frec=10, fase=np.pi/2, N=200, frecADC=250):
+def mi_funcion(Vm, A,frec, fase, N, frecADC):
     
     ts = 1/frecADC
     tt = np.linspace(0,(N-1)*ts, N)
     ff = Vm + A*np.sin(2*np.pi*frec*tt + fase)
-    plt.figure(1)
-    plt.plot(tt, ff, 'ro')
-    plt.title('senoidal')
-    plt.xlabel('tiempo [segundos]')
-    plt.ylabel('Amplitud [V]')
-    plt.show()    
-
-
+    return tt, ff
 
     
-mi_funcion(50,5,10,np.pi,100,500)
-
-
+tt,ff = mi_funcion(Vm=50, A=5,frec=10, fase=np.pi/2, N=100, frecADC=500)
+plt.figure()
+plt.plot(tt, ff, 'ro')
 
